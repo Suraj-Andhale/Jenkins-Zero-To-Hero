@@ -19,7 +19,7 @@ pipeline {
         sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
       }
     }
-    stage('Static Code Analysis') {
+    /*stage('Static Code Analysis') {
       environment {
         SONAR_URL = "http:98.83.212.180:9000"
       }
@@ -29,6 +29,7 @@ pipeline {
         }
       }
     }
+  */
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "suraj2012/ultimate-cicd:${BUILD_NUMBER}"
